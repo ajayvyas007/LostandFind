@@ -1,0 +1,898 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.ajay.lostandfind.fragment.AddItemFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RadioGroup
+                            android:id="@+id/lost_find_radiogroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp"
+                            android:layout_marginStart="20dp">
+                            <RadioButton
+                                android:id="@+id/lost_radio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="Lost" />
+                            <RadioButton
+                                android:id="@+id/find_radio"
+                                android:checked="false"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Find" />
+
+                        </RadioGroup>
+
+
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/tiles_dark"
+                        android:orientation="vertical">
+                        <Spinner
+                            android:layout_margin="5dp"
+                            android:id="@+id/spinner2"
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_margin="5dp"
+                android:id="@+id/missing_candidate_human_being_layout_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:visibility="gone"
+                android:orientation="vertical"
+                android:background="@drawable/tiles">
+                <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Missing Candidate Details"
+                    android:textSize="18sp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextInputLayout"
+                    android:layout_margin="@dimen/margin">
+
+
+
+                    <EditText android:id="@+id/input_first_name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:hint="Name"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+                </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin">
+                        <EditText
+                            android:id="@+id/description_human"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Description"
+                            android:maxLines="10"
+                            android:imeOptions="actionSearch"
+                            android:inputType="text|textMultiLine"
+                            android:singleLine="true" />
+                    </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Complexion"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiles"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                <Spinner
+                    android:id="@+id/comlexion_spinner"
+                    android:layout_margin="5dp"
+                    android:visibility="visible"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+                    </LinearLayout>
+                    <TextView
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Body Type"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiles"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <Spinner
+                            android:id="@+id/body_type_spinner"
+                            android:layout_margin="5dp"
+                            android:visibility="visible"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gender"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiles"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                    <Spinner
+                        android:id="@+id/gender_type_spinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                    <LinearLayout
+                    android:layout_margin="5dp"
+                    android:id="@+id/voilet_missing_layout_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:background="@drawable/tiles">
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missing Details"
+                        android:textSize="18sp"/>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+
+
+
+                        <EditText android:id="@+id/type_of_voilet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Type- Violet/Purse..."
+                            android:inputType="textMultiLine|text"
+                            android:maxLines="10"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colour Type"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiles"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <Spinner
+                            android:id="@+id/color_type_voilet_spinner"
+                            android:layout_margin="5dp"
+                            android:visibility="visible"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+
+
+
+                        <EditText android:id="@+id/description_voilet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Contains"
+                            android:inputType="textMultiLine|text"
+                            android:maxLines="10"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+
+
+
+                        <EditText android:id="@+id/amount_voilet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Amount"
+                            android:inputType="text"
+                            android:maxLines="2"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:id="@+id/vehicle_missing_layout_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:background="@drawable/tiles">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Missing Vehicle Details"
+                            android:textSize="18sp"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+
+
+
+                            <EditText android:id="@+id/brand_of_voilet"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Brand"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+                            <EditText android:id="@+id/vehicle_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Number"
+                                android:inputType="textMultiLine|text|textCapCharacters"
+                                android:maxLines="10"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+
+                        <TextView
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Colour Type"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15sp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/tiles"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+                            <Spinner
+                                android:id="@+id/color_type_vehicle_spinner"
+                                android:layout_margin="5dp"
+                                android:visibility="visible"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_margin="5dp"
+                    android:id="@+id/missing_id_card_layout_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:background="@drawable/tiles">
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missing Card Details"
+                        android:textSize="18sp"/>
+                    <TextView
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Card Type"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiles"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <Spinner
+                            android:id="@+id/missing_id_card_type_spinner"
+                            android:layout_margin="5dp"
+                            android:visibility="visible"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+
+
+
+                        <EditText android:id="@+id/missing_id_card_number_edittext_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Number"
+                            android:inputType="text|textMultiLine"
+                            android:maxLines="2"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_margin="5dp"
+                    android:id="@+id/missing_phone_layout_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:background="@drawable/tiles">
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missing Phone Details"
+                        android:textSize="18sp"/>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+                        <EditText android:id="@+id/missing_phone_brand_edittext_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Brand"
+                            android:inputType="text|textMultiLine"
+                            android:maxLines="2"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <TextView
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colour"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiles"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <Spinner
+                            android:id="@+id/missing_phone_colour_type_spinner"
+                            android:layout_margin="5dp"
+                            android:visibility="visible"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+                        <EditText android:id="@+id/missing_phone_model_edittext_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Model"
+                            android:inputType="text|textMultiLine"
+                            android:maxLines="2"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+                        <EditText android:id="@+id/missing_phone_description_edittext_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Brand"
+                            android:inputType="text|textMultiLine"
+                            android:maxLines="2"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:id="@+id/missing_electronic_layout_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:background="@drawable/tiles">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Missing Electronic Details"
+                            android:textSize="18sp"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+                            <EditText android:id="@+id/missing_electronic_type_textview_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Brand"
+                                android:inputType="text|textMultiLine"
+                                android:maxLines="10"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+                            <EditText android:id="@+id/missing_electronic_model_textview_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Model"
+                                android:inputType="text|textMultiLine"
+                                android:maxLines="10"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+                        <TextView
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Card Type"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15sp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/tiles"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+                            <Spinner
+                                android:id="@+id/electronic_color_type_spinner"
+                                android:layout_margin="5dp"
+                                android:visibility="visible"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:id="@+id/missing_keys_layout_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:background="@drawable/tiles">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Missing Keys Details"
+                            android:textSize="18sp"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+                            <EditText android:id="@+id/missing_keys_type_textview_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Keys Of"
+                                android:inputType="text|textMultiLine"
+                                android:maxLines="10"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+                        <TextView
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Card Type"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="15sp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/tiles"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+                            <Spinner
+                                android:id="@+id/color_type_of_key_spinner"
+                                android:layout_margin="5dp"
+                                android:visibility="visible"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:id="@+id/missing_money_layout_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:background="@drawable/tiles">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Missing Money Details"
+                            android:textSize="18sp"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+                            <EditText android:id="@+id/missing_money_cash_textview_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Cash Amount"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:id="@+id/missing_place_description_details_layout_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:background="@drawable/tiles">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Missing Place Details"
+                            android:textSize="18sp"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+                            <EditText android:id="@+id/missing_details_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Description"
+                                android:inputType="text|textMultiLine"
+                                android:maxLines="10"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:id="@+id/missing_place_details_layout_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:background="@drawable/tiles">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Missing Place Details"
+                            android:textSize="18sp"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayout"
+                            android:layout_margin="@dimen/margin">
+
+
+
+                            <EditText android:id="@+id/missing_place_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorPrimaryDark"
+                                android:hint="Address"
+                                android:inputType="text|textMultiLine"
+                                android:maxLines="5"
+                                android:singleLine="true"/>
+                        </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin">
+                        <AutoCompleteTextView
+                            android:id="@+id/country_autocomplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Country"
+                            android:maxLines="1"
+                            android:imeOptions="actionSearch"
+                            android:inputType="textAutoComplete|textAutoCorrect"
+                            android:singleLine="true" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin">
+                        <AutoCompleteTextView
+                            android:id="@+id/state_autocomplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="State"
+                            android:maxLines="1"
+                            android:imeOptions="actionSearch"
+                            android:inputType="textAutoComplete|textAutoCorrect"
+                            android:singleLine="true" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin">
+                        <AutoCompleteTextView
+                            android:id="@+id/city_autocomplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="City"
+                            android:maxLines="1"
+                            android:imeOptions="actionSearch"
+                            android:inputType="textAutoComplete|textAutoCorrect"
+                            android:singleLine="true" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+
+            </LinearLayout>
+                    <LinearLayout
+                        android:layout_margin="5dp"
+                        android:id="@+id/add_image_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        android:background="@drawable/tiles">
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Image"
+                            android:textSize="18sp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_margin="5dp"
+                                android:background="@drawable/tiles"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp">
+
+
+                            <ImageView
+                                android:visibility="visible"
+                                android:id="@+id/image_show"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_margin="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_weight="2">
+                                <Button
+                                    android:id="@+id/camera_button"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/tiles"
+                                    android:layout_weight="1"
+                                    android:text="Camera"/>
+                                <Button
+                                    android:id="@+id/gallery_button"
+                                    android:layout_marginStart="5dp"
+                                    android:background="@drawable/tiles"
+                                    android:text="Gallery"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"/>
+                            </LinearLayout>
+                            </LinearLayout>
+
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:id="@+id/contact_person_human_being_layout_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="@drawable/tiles">
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contact Person Details"
+                        android:textSize="20sp"/>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+                        <EditText android:id="@+id/input_first_nam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Name"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputLayout"
+                        android:layout_margin="@dimen/margin">
+                        <EditText android:id="@+id/contact_person_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Email"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin">
+                        <EditText android:id="@+id/contact_person_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorPrimaryDark"
+                            android:hint="Address"
+                            android:inputType="text"
+                            android:maxLines="3"
+                            android:singleLine="true"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <TextView
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone Number"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tiles"
+                        android:orientation="horizontal"
+                        android:layout_margin="5dp">
+                        <TextView
+                            android:id="@+id/phone_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="+91"/>
+                        <EditText
+                            android:id="@+id/phone_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Phone Number"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+
+                    <Button android:id="@+id/submit_button"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin"
+                        android:background="@drawable/tiles"
+                        android:text="Submit"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+
+</FrameLayout>
